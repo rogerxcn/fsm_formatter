@@ -21,24 +21,24 @@ char fsm_type;
 
 /* Data Structure Def */
 
-typedef struct MealyNode_Struct{
+typedef struct MealyNode_Struct<%
 
   string name;
 
   map<int, string> next_state;
   map<int, string> output;
 
-}meNode;
+%>meNode;
 
 
-typedef struct MooreNode_Struct{
+typedef struct MooreNode_Struct<%
 
   string name;
 
   map<int, string> next_state;
   string output;
 
-}moNode;
+%>moNode;
 
 
 
@@ -361,7 +361,7 @@ void construct_moore(){
 int main(int argc, char const *argv[]) {
 
   InputState:
-    std::cout << "Enter the type of FSM you would like to construct > M(e)aly or M(o)ore: " << '\n';
+    std::cout << "\nEnter the type of FSM you would like to construct > M(e)aly or M(o)ore: " << '\n';
     std::cin >> fsm_type;
 
     switch (fsm_type) {
@@ -378,7 +378,7 @@ int main(int argc, char const *argv[]) {
 
 
   InputBits:
-    std::cout << "Enter the number of inputs: " << '\n';
+    std::cout << "\nEnter the number of inputs: " << '\n';
     std::cin >> num_bits;
     if (num_bits <= 0 || num_bits > 4){
       std::cout << "Invalid input bits." << '\n';
@@ -386,7 +386,7 @@ int main(int argc, char const *argv[]) {
     }
 
   InputNodes:
-    std::cout << "Enter the number of nodes: " << '\n';
+    std::cout << "\nEnter the number of nodes: " << '\n';
     std::cin >> num_nodes;
     if (num_nodes <= 0 || num_nodes > MAX_STATES){
       std::cout << "Invalid input nodes." << '\n';
